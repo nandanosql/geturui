@@ -1,0 +1,144 @@
+/* GetUrUI tokens — import after "tailwindcss" in your globals.css:  @import "./geturui.css";
+   Fonts: set --font-bricolage, --font-geist and --font-geist-mono (next/font) on <html>. */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e0e0f;
+  --surface: #161618;
+  --surface-raised: #1e1e21;
+  --surface-sunken: #09090a;
+  --surface-hover: #ffffff0d;
+  --border: #ffffff14;
+  --border-strong: #ffffff5c;
+  --ink: #f4f4f2;
+  --ink-muted: #a1a1a6;
+  --ink-subtle: #85858b;
+  --volt: #c8f031;
+  --volt-ink: #c8f031;
+  --volt-soft: #c8f0311f;
+  --on-volt: #0e0e0f;
+  --ember: #ff6b35;
+  --ember-ink: #ff8a5c;
+  --ember-soft: #ff6b351f;
+  --on-ember: #0e0e0f;
+  --success: #3ddc97;
+  --warning: #f5b400;
+  --danger: #ff6161;
+  --success-soft: #3ddc971f;
+  --warning-soft: #f5b4001f;
+  --danger-soft: #ff61611f;
+  --info-soft: #6cb4ff1f;
+  --info: #6cb4ff;
+  --glass: #161618b3;
+  --scrim: #000000a6;
+  --shadow-sm: 0 1px 2px #00000066;
+  --shadow-md: 0 8px 24px #00000080, 0 0 0 1px #ffffff0f;
+  --shadow-lg: 0 24px 64px #000000b3, 0 0 0 1px #ffffff14;
+  --shadow-glow: 0 0 0 1px #c8f03166, 0 8px 32px #c8f03133;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fafaf9;
+  --surface: #f2f2f0;
+  --surface-raised: #ffffff;
+  --surface-sunken: #ebebe8;
+  --surface-hover: #0b0b0b0a;
+  --border: #0b0b0b14;
+  --border-strong: #0b0b0b7a;
+  --ink: #111112;
+  --ink-muted: #5c5c61;
+  --ink-subtle: #6b6b70;
+  --volt-ink: #4a6b00;
+  --volt-soft: #c8f03147;
+  --ember-ink: #a8380a; /* 5:1 on the ember-soft tint over light surfaces (AA for 10–12px badge text) */
+  --ember-soft: #ff6b3524;
+  --success: #0f7a4a;
+  --warning: #8a6100;
+  --danger: #c42b2b;
+  --success-soft: #0f7a4a1a;
+  --warning-soft: #8a61001a;
+  --danger-soft: #c42b2b14;
+  --info-soft: #1d5fbf14;
+  --info: #1d5fbf;
+  --glass: #ffffffb8;
+  --scrim: #0a0a0c66;
+  --shadow-sm: 0 1px 2px #0b0b0b14;
+  --shadow-md: 0 8px 24px #0b0b0b1a, 0 0 0 1px #0b0b0b0d;
+  --shadow-lg: 0 24px 64px #0b0b0b2e, 0 0 0 1px #0b0b0b14;
+  --shadow-glow: 0 0 0 1px #4a6b0066, 0 8px 24px #c8f03166;
+}
+
+:root {
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-spring: linear(0, .009, .035 2.1%, .141, .281 6.7%, .723 12.9%, .938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, .991, .977 51%, .974 53.8%, .975 57.1%, .997 69.8%, 1.003 76.9%, 1.004 83.8%, 1);
+  --ease-spring-soft: linear(0, .06, .22 8%, .6 20%, .86 31%, 1.01 43%, 1.04 52%, 1.02 64%, 1);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--volt-ink);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-volt: var(--volt);
+  --color-volt-ink: var(--volt-ink);
+  --color-volt-soft: var(--volt-soft);
+  --color-on-volt: var(--on-volt);
+  --color-ember: var(--ember);
+  --color-ember-ink: var(--ember-ink);
+  --color-ember-soft: var(--ember-soft);
+  --color-on-ember: var(--on-ember);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --color-success-soft: var(--success-soft);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger-soft: var(--danger-soft);
+  --color-info-soft: var(--info-soft);
+  --color-glass: var(--glass);
+  --color-scrim: var(--scrim);
+
+  --font-display: var(--font-bricolage), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-glow: var(--shadow-glow);
+
+  --ease-spring: var(--ease-spring);
+  --ease-spring-soft: var(--ease-spring-soft);
+  --ease-out-expo: var(--ease-out);
+
+  --animate-spin-slow: spin 2.4s linear infinite;
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --animate-shimmer: shimmer 2.2s linear infinite;
+  --animate-pulse-dot: pulse-dot 1.8s var(--ease-out) infinite;
+
+  @keyframes marquee { to { transform: translateX(calc(-50% - 0.5rem)); } }
+  @keyframes shimmer { from { background-position: 100% 0; } to { background-position: -150% 0; } }
+  @keyframes pulse-dot { 0% { box-shadow: 0 0 0 0 currentColor; } 70%, 100% { box-shadow: 0 0 0 5px transparent; } }
+}
+
+
+.dot-grid { background-color: var(--surface); background-image: radial-gradient(var(--border-strong) 1px, transparent 1.2px); background-size: 16px 16px; }
+.glass { background: var(--glass); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); }
+.fade-x { -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.shimmer-text { background: linear-gradient(100deg, var(--ink-subtle) 35%, var(--ink) 50%, var(--ink-subtle) 65%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: var(--animate-shimmer); }
